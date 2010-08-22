@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1167743C-E1E6-44D6-AFD8-8856E473EE5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Mole</RootNamespace>
+    <AssemblyName>Mole.Visualizer</AssemblyName>
+    <MyType>Windows</MyType>
+    <OptionStrict>On</OptionStrict>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Mole.Visualizer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Mole.Visualizer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Workflow.Activities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Workflow.ComponentModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Workflow.Runtime, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom Controls\DataTableDisplay.Designer.vb">
+      <DependentUpon>DataTableDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\DataTableDisplay.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Source\MoleVisualizerObjectSource.vb" />
+    <Compile Include="Data\DrillingOperationResponse.vb" />
+    <Compile Include="Data\EditInfoResponse.vb" />
+    <Compile Include="Data\EditOperationResponse.vb" />
+    <Compile Include="Data\ExportProperties.vb" />
+    <Compile Include="Data\ExportProperty.vb" />
+    <Compile Include="Data\LogicalTreeInfo.vb" />
+    <Compile Include="Data\MoleCrumb.vb" />
+    <Compile Include="Data\TransferDataRequest.vb" />
+    <Compile Include="Editors\frmMoleColorEditor.Designer.vb">
+      <DependentUpon>frmMoleColorEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleColorEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\frmMoleDateTimeEditor.Designer.vb">
+      <DependentUpon>frmMoleDateTimeEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleDateTimeEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\frmMoleFontEditor.Designer.vb">
+      <DependentUpon>frmMoleFontEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleFontEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\frmMoleFontNameEditor.Designer.vb">
+      <DependentUpon>frmMoleFontNameEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleFontNameEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\frmMoleSelectFromValues.Designer.vb">
+      <DependentUpon>frmMoleSelectFromValues.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleSelectFromValues.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\frmMoleTextAndNumberEditor.Designer.vb">
+      <DependentUpon>frmMoleTextAndNumberEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleTextAndNumberEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\frmMoleThicknessRectangleEditor.Designer.vb">
+      <DependentUpon>frmMoleThicknessRectangleEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleThicknessRectangleEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\frmMoleTimeSpanEditor.Designer.vb">
+      <DependentUpon>frmMoleTimeSpanEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleTimeSpanEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\IMoleEditor.vb" />
+    <Compile Include="Editors\MoleEditor.vb" />
+    <Compile Include="Enums Constants\GlobalConstants.vb" />
+    <Compile Include="Enums Constants\Enums.vb" />
+    <Compile Include="Data\Tree.vb" />
+    <Compile Include="Data\TreeElementProperty.vb" />
+    <Compile Include="Data\TreeElement.vb" />
+    <Compile Include="Event Args\MoleCrumbEventArgs.vb" />
+    <Compile Include="Event Args\MoleEditorWriteEventArgs.vb" />
+    <Compile Include="Extended Controls\MoleCrumbs.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extended Controls\MoleDataGridViewRow.vb" />
+    <Compile Include="Extended Controls\MoleTreeView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Settings\MoleEditorWindowState.vb" />
+    <Compile Include="Settings\MoleSettings.vb" />
+    <Compile Include="Visualizer UI\frmCollectionItemViewer.Designer.vb">
+      <DependentUpon>frmCollectionItemViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizer UI\frmCollectionItemViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualizer UI\frmMole.Designer.vb">
+      <DependentUpon>frmMole.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizer UI\frmMole.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debugger Visualizer\Burrow.vb" />
+    <Compile Include="Extended Controls\MoleTreeNode.vb" />
+    <Compile Include="Data Source\Image Processing\VisualSnapshot.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Editors\frmMoleEditorBase.Designer.vb">
+      <DependentUpon>frmMoleEditorBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\frmMoleEditorBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Custom Controls\DataTableDisplay.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataTableDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizer UI\frmCollectionItemViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCollectionItemViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizer UI\frmMole.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMole.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\MoleVisualUnavailable.gif" />
+    <None Include="XSLT\defaultss.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XSLT\defaultssnotree.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Editors\frmMoleColorEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleColorEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\frmMoleDateTimeEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleDateTimeEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\frmMoleFontEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleFontEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\frmMoleFontNameEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleFontNameEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\frmMoleSelectFromValues.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleSelectFromValues.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\frmMoleTextAndNumberEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleTextAndNumberEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\frmMoleThicknessRectangleEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleThicknessRectangleEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\frmMoleTimeSpanEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleTimeSpanEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extended Controls\MoleCrumbs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MoleCrumbs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\Edit.ico" />
+    <EmbeddedResource Include="Editors\frmMoleEditorBase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMoleEditorBase.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

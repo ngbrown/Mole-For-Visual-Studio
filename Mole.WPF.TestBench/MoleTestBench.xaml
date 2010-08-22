@@ -1,0 +1,151 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2006"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    x:Class="MoleTestBench"
+    Title="Mole For Visual Studio - WPF Test Bench" Width="600" Height="575"
+    WindowStartupLocation="CenterScreen"
+    >
+    <DockPanel Margin="10">
+        <TextBlock
+            DockPanel.Dock="Top"
+            FontWeight="DemiBold"
+            TextWrapping="WrapWithOverflow"
+            Height="Auto"
+            VerticalAlignment="Top"
+            >
+            1. Go into MoleTestBench.xaml.vb and put a breakpoint in the event handler.
+            <LineBreak/>
+            <LineBreak/>
+            2. Then hold Ctrl and click on any element to hit the breakpoint.
+            <LineBreak/>
+        </TextBlock>
+
+        <TabControl x:Name="mainTabControl">
+
+            <!-- HETEROGENOUS LISTBOX -->
+            <TabItem Header="Heterogenous ListBox">
+                <ListBox x:Name="lbWithDifferentItemTypes">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <!-- Use a non-virtualizing StackPanel so that all the visuals for every item are created. -->
+                            <StackPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBoxItem>
+                        <TextBlock>
+                            <Run Background="#FFBBFFBF">I am a Run, but a Run is not in the visual tree.</Run>
+                        </TextBlock>
+                    </ListBoxItem>
+                    <CheckBox x:Name="mrBlisterTwister" Content="Boo!"/>
+                    <Image Source="bach.jpg" Width="50" Height="50" />
+
+                    <System:String xml:space="preserve">This Is Just Text</System:String>
+                    <System:Int32>1254</System:Int32>
+                    <System:Int32>69874</System:Int32>
+                    <System:Int32>36587</System:Int32>
+                    <System:String xml:space="preserve">Select Mole!</System:String>
+                    <CheckBox x:Name="cbDoYouMolenate" Content="Do you Molenate?" IsChecked="True" />
+                    <ListBoxItem Content="SteelBlue"/>
+                    <ListBoxItem Content="Gray (Mole's New MoleTone)"/>
+
+                </ListBox>
+            </TabItem>
+
+            <!-- HOMOGENOUS LISTVIEW -->
+            <TabItem Header="Homogenous ListView">
+                <ListView x:Name="listView" ItemsSource="{Binding}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Composer Name" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Era" DisplayMemberBinding="{Binding Era}" />
+                            <GridViewColumn Header="More Info">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <Hyperlink NavigateUri="{Binding WikipediaUri}">
+                                                Learn more
+                                            </Hyperlink>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+
+            <!-- COMMON CONTROLS -->
+            <TabItem Header="Common Controls">
+                <StackPanel>
+                    <Button Height="Auto" Content="Hello, I am a Button" Margin="0,10,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+
+                    <ComboBox x:Name="theComboBox" SelectedIndex="0" Height="Auto" Margin="0,10,0,0" VerticalAlignment="Top" Grid.Row="2">
+                        <Rectangle Fill="Red" Width="100" Height="30" />
+                        <Rectangle Fill="Green" Width="100" Height="30" />
+                        <Rectangle Fill="Blue" Width="100" Height="30" />
+                        <TextBlock HorizontalAlignment="Left" ToolTip="Gone but not forgotten" VerticalAlignment="Top" Width="100" Height="30" Background="#FFEDC513" FontWeight="Bold" Foreground="#FF14BA00" Text="Moletones" TextAlignment="Center" TextWrapping="Wrap"/>
+                    </ComboBox>
+
+                    <TextBox Margin="0,10,0,0">I am a TextBox</TextBox>
+
+                    <Slider Margin="0,10,0,0" />
+
+                    <Label Background="LimeGreen" Margin="0,10,0,0">I am a Label</Label>
+
+                    <GroupBox Header="I am a GroupBox who contains an InkCanvas" Margin="0,10,0,0">
+                        <InkCanvas Height="60" />
+                    </GroupBox>
+
+                    <PasswordBox Password="password" Margin="0,10,0,0" />
+
+                    <RadioButton Content="I am a RadioButton" Margin="0,10,0,0" />
+
+                    <ProgressBar Value="50" Height="30" Margin="0,10,0,0"/>
+
+                    <TreeView Margin="0,10,0,0">
+                        <TreeViewItem Header="I am a TreeViewItem" IsExpanded="True">
+                            <TreeViewItem Header="I am a child TreeViewItem"/>
+                            <TreeViewItem Header="I am another child TreeViewItem"/>
+                        </TreeViewItem>
+                    </TreeView>
+                </StackPanel>
+            </TabItem>
+
+            <!-- FLOW DOCUMENT -->
+            <TabItem Header="Flow Document">
+
+                <FlowDocumentScrollViewer Grid.Row="4">
+                    <FlowDocument>
+                        <Paragraph>
+                            This is some text in a flow document.  Most of the document's elements seen in the XAML
+                            will not appear in the visual tree, but will be in the logical tree.  Most elements in
+                            a flow document derive from ContentElement, which means that they are not actually included
+                            in visual trees.  Instead they are "hosted" by FrameworkElement subclasses which display them
+                            in whatever way they want.  To do that, visual elements are internally created by WPF to
+                            render the document.  Those internally created elements will appear in the visual tree.
+                        </Paragraph>
+
+                        <List>
+                            <ListItem>
+                                <Paragraph>
+                                    I am an item in a list
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    I am another item in a list
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                        <BlockUIContainer>
+                            <Button>I am a Button in the FlowDocument</Button>
+                        </BlockUIContainer>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Host", "ServiceHost\Host.vbproj", "{ED47A3AB-AEFE-4DC7-8796-C25DB26FE79C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloIndigo", "HelloIndigo\HelloIndigo.vbproj", "{61A2FC76-2399-4DB4-A073-59F98C21333B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Client", "Client\Client.vbproj", "{ECAB8AB8-D9AF-4B4A-8023-FE3208B6B6DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED47A3AB-AEFE-4DC7-8796-C25DB26FE79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED47A3AB-AEFE-4DC7-8796-C25DB26FE79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED47A3AB-AEFE-4DC7-8796-C25DB26FE79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED47A3AB-AEFE-4DC7-8796-C25DB26FE79C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A2FC76-2399-4DB4-A073-59F98C21333B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A2FC76-2399-4DB4-A073-59F98C21333B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A2FC76-2399-4DB4-A073-59F98C21333B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A2FC76-2399-4DB4-A073-59F98C21333B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECAB8AB8-D9AF-4B4A-8023-FE3208B6B6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECAB8AB8-D9AF-4B4A-8023-FE3208B6B6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAB8AB8-D9AF-4B4A-8023-FE3208B6B6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECAB8AB8-D9AF-4B4A-8023-FE3208B6B6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
