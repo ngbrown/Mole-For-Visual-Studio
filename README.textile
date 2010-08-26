@@ -1,0 +1,25 @@
+h1. Mole for Visual Studio 2010
+
+An update for the "Mole for Visual Studio - With Editing" project to support Visual Studio and .NET 4.0.
+
+h2. Project Info
+
+* *Original CodeProject article*: "www.codeproject.com/KB/macros/MoleForVisualStudioEdit.aspx":http://www.codeproject.com/KB/macros/MoleForVisualStudioEdit.aspx
+* *Update Project Home*: "github.com/ngbrown/Mole-For-Visual-Studio":http://github.com/ngbrown/Mole-For-Visual-Studio
+
+
+h2. Introduction
+
+From the CodeProject article:
+
+bq. Mole was authored by "Karl Shifflett":http://karlshifflett.wordpress.com/, "Josh Smith":http://joshsmithonwpf.wordpress.com/ and "Andrew Smith":http://agsmith.wordpress.com/ who make up "Team Mole":http://joshsmithonwpf.wordpress.com/mole/. The core development process took the team several weeks. Most of the additional enhancements were implemented by Andrew and Karl, with a lot of testing and feedback provided by Josh.
+
+h2. Updates for Visual Studio 2010
+
+The solution files were each loaded in in Visual Studio 2010, allowing the solutions, projects, and generated files were allowed to update.  The target framework was then changed to .NET 4.0.  Any references still targeting 2.0 were updated.  Especially note that the path to @Microsoft.VisualStudio.DebuggerVisualizers@ changed to @C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.VisualStudio.DebuggerVisualizers.dll@
+
+h2. License
+
+The source code and associated files were licensed by the authors under "The Code Project Open License (CPOL)":http://www.codeproject.com/info/cpol10.aspx.
+
+The modified source code and compiled binaries are distributed under the rights granted by the license.
