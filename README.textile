@@ -1,6 +1,6 @@
 h1. Mole for Visual Studio 2010
 
-An update for the "Mole for Visual Studio - With Editing" project to support Visual Studio and .NET 4.0.
+An update for the "Mole for Visual Studio - With Editing" project to support Visual Studio 2010 and .NET 4.0.
 
 h2. Project Info
 
@@ -16,7 +16,7 @@ bq. Mole was authored by "Karl Shifflett":http://karlshifflett.wordpress.com/, "
 
 h2. Updates for Visual Studio 2010
 
-The solution files were each loaded in in Visual Studio 2010, allowing the solutions, projects, and generated files were allowed to update.  The target framework was then changed to .NET 4.0.  Any references still targeting 2.0 were updated.  Especially note that the path to @Microsoft.VisualStudio.DebuggerVisualizers@ changed to @C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.VisualStudio.DebuggerVisualizers.dll@
+The solution files were each loaded in in Visual Studio 2010, the solutions, projects, and generated files were allowed to update.  The target framework was then changed to .NET 4.0.  Any references still targeting 2.0 were updated to the 4.0 version.  Especially note that the path to @Microsoft.VisualStudio.DebuggerVisualizers@ changed to @C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.VisualStudio.DebuggerVisualizers.dll@
 
 h2. License
 
